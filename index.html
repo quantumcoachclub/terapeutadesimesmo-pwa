@@ -3,12 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#8b6f47">
+  <meta name="theme-color" content="#833c58">
   <meta name="description" content="Autoconhecimento na Prática — uma reflexão só transforma quando vira ação.">
 
   <title>Autoconhecimento na Prática</title>
 
   <style>
+    :root {
+      --wine: #833c58;
+      --wine-dark: #552238;
+      --wine-deep: #2a101b;
+      --wine-soft: #f1e3e9;
+      --wine-pale: #fbf7f9;
+      --black: #110e10;
+      --charcoal: #292328;
+      --white: #ffffff;
+      --border: #d9bdc9;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -16,17 +28,19 @@
     }
 
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f7f3ed;
-      color: #3f3a34;
+      font-family: Garamond, "EB Garamond", "Times New Roman", serif;
+      background: linear-gradient(145deg, var(--white) 0%, var(--wine-pale) 45%, var(--wine-soft) 100%);
+      background-attachment: fixed;
+      color: var(--charcoal);
       line-height: 1.6;
     }
 
     header {
-      background: #8b6f47;
-      color: white;
+      background: linear-gradient(135deg, var(--black) 0%, var(--wine-deep) 42%, var(--wine) 100%);
+      color: var(--white);
       padding: 28px 20px;
       text-align: center;
+      border-bottom: 3px solid var(--wine);
     }
 
     header h1 {
@@ -46,8 +60,8 @@
       justify-content: center;
       gap: 8px;
       padding: 12px;
-      background: white;
-      border-bottom: 1px solid #e5ddd2;
+      background: rgba(17, 14, 16, 0.97);
+      border-bottom: 1px solid var(--wine);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -57,14 +71,14 @@
       background: transparent;
       border: none;
       padding: 9px 12px;
-      color: #65543e;
+      color: var(--white);
       cursor: pointer;
       font-family: inherit;
       font-size: 14px;
     }
 
     nav button:hover {
-      background: #f1ebe2;
+      background: var(--wine);
       border-radius: 8px;
     }
 
@@ -91,6 +105,7 @@
       font-size: 30px;
       font-weight: normal;
       margin-bottom: 14px;
+      color: var(--wine-dark);
     }
 
     .intro p {
@@ -100,31 +115,36 @@
     }
 
     .main-button {
-      background: #8b6f47;
-      color: white;
+      background: linear-gradient(135deg, var(--wine-dark), var(--wine));
+      color: var(--white);
       border: none;
       padding: 15px 28px;
       border-radius: 30px;
       font-family: inherit;
       font-size: 17px;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      box-shadow: 0 6px 18px rgba(85, 34, 56, 0.28);
     }
 
     .main-button:hover {
-      opacity: 0.9;
+      background: linear-gradient(135deg, var(--wine), #a75978);
       transform: translateY(-1px);
     }
 
     .secondary-button {
-      background: white;
-      color: #765e3d;
-      border: 1px solid #cdbfae;
+      background: var(--white);
+      color: var(--wine-dark);
+      border: 1px solid var(--wine);
       padding: 12px 20px;
       border-radius: 25px;
       font-family: inherit;
       cursor: pointer;
       font-size: 15px;
+    }
+
+    .secondary-button:hover {
+      background: var(--wine-soft);
+      color: var(--black);
     }
 
     .card-container {
@@ -134,8 +154,9 @@
     }
 
     .card {
-      background: #fffdf9;
-      border: 1px solid #d9cdbd;
+      background: linear-gradient(155deg, var(--black) 0%, var(--wine-deep) 58%, var(--wine) 100%);
+      color: var(--white);
+      border: 1px solid #a85c79;
       border-radius: 18px;
       padding: 38px 28px;
       min-height: 300px;
@@ -143,13 +164,13 @@
       flex-direction: column;
       justify-content: center;
       text-align: center;
-      box-shadow: 0 12px 30px rgba(74, 58, 40, 0.12);
+      box-shadow: 0 16px 38px rgba(42, 16, 27, 0.3);
     }
 
     .card-number {
       font-size: 13px;
       letter-spacing: 2px;
-      color: #9a7950;
+      color: #e4bfd0;
       margin-bottom: 18px;
     }
 
@@ -157,7 +178,7 @@
       font-size: 14px;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: #8b6f47;
+      color: var(--white);
       margin-bottom: 18px;
     }
 
@@ -168,15 +189,17 @@
     }
 
     .reflection {
-      background: white;
+      background: var(--white);
       border-radius: 14px;
       padding: 25px;
       margin-top: 25px;
-      border: 1px solid #e4dbcf;
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--wine);
+      box-shadow: 0 8px 22px rgba(85, 34, 56, 0.08);
     }
 
     .reflection h3 {
-      color: #8b6f47;
+      color: var(--wine);
       font-size: 15px;
       letter-spacing: 1px;
       margin-bottom: 10px;
@@ -188,16 +211,16 @@
 
     .original-text,
     .practice-box {
-      background: #fffdf9;
+      background: var(--wine-soft);
       border-radius: 14px;
       padding: 25px;
       margin-top: 22px;
-      border: 1px solid #e4dbcf;
+      border: 1px solid var(--border);
     }
 
     .original-text h3,
     .practice-box h3 {
-      color: #8b6f47;
+      color: var(--wine-dark);
       font-size: 15px;
       letter-spacing: 1px;
       margin-bottom: 10px;
@@ -211,7 +234,7 @@
 
     .credit {
       margin-top: 14px;
-      color: #8d857b;
+      color: var(--wine-dark);
       font-size: 13px;
       font-style: italic;
     }
@@ -225,24 +248,25 @@
       font-size: 16px;
       margin-bottom: 8px;
       font-weight: bold;
+      color: var(--wine-dark);
     }
 
     textarea {
       width: 100%;
       min-height: 105px;
       padding: 13px;
-      border: 1px solid #d5c8b8;
+      border: 1px solid var(--border);
       border-radius: 10px;
-      background: #fffdf9;
+      background: var(--white);
       font-family: inherit;
       font-size: 16px;
       resize: vertical;
-      color: #3f3a34;
+      color: var(--black);
     }
 
     textarea:focus {
-      outline: 2px solid #cdbb9f;
-      border-color: #8b6f47;
+      outline: 2px solid #d9aabd;
+      border-color: var(--wine);
     }
 
     .save-area {
@@ -255,13 +279,15 @@
       margin: 15px 0;
       padding: 12px;
       border-radius: 10px;
-      background: #eee7dc;
+      background: var(--wine-soft);
+      color: var(--wine-dark);
       display: none;
     }
 
     .journal-entry {
-      background: white;
-      border: 1px solid #e4dbcf;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--wine);
       border-radius: 14px;
       padding: 20px;
       margin-bottom: 18px;
@@ -270,13 +296,13 @@
     .journal-entry h3 {
       font-size: 18px;
       font-weight: normal;
-      color: #765e3d;
+      color: var(--wine-dark);
       margin-bottom: 5px;
     }
 
     .journal-date {
       font-size: 13px;
-      color: #8d857b;
+      color: #765663;
       margin-bottom: 14px;
     }
 
@@ -290,19 +316,21 @@
     .empty {
       text-align: center;
       padding: 40px 20px;
-      color: #777066;
+      color: #684b57;
     }
 
     .about {
-      background: white;
+      background: var(--white);
       padding: 28px;
       border-radius: 15px;
-      border: 1px solid #e4dbcf;
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--wine);
+      box-shadow: 0 10px 28px rgba(85, 34, 56, 0.1);
     }
 
     .about h2 {
       font-weight: normal;
-      color: #765e3d;
+      color: var(--wine-dark);
       margin-bottom: 18px;
     }
 
@@ -313,7 +341,8 @@
     footer {
       text-align: center;
       padding: 25px;
-      color: #8a8176;
+      background: var(--black);
+      color: #e8d7df;
       font-size: 13px;
     }
 
@@ -492,7 +521,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "Em qual área da sua vida você tem aceitado menos do que realmente deseja ou merece?",
       writing: "Escreva o que você verdadeiramente gostaria de pedir à vida nessa área. Depois descreva quais crenças, medos ou hábitos fizeram você diminuir esse pedido até agora.",
       action: "Defina hoje um pedido ou limite concreto que expresse melhor o seu valor.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -505,7 +534,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "Que verdade você tem repetido porque ouviu de alguém, mas ainda não comprovou em sua própria experiência?",
       writing: "Escolha uma crença importante sobre você ou sobre a vida. Escreva de onde ela veio, quais experiências parecem confirmá-la e quais experiências a contradizem.",
       action: "Observe essa crença durante o dia e registre um exemplo real, sem tentar provar que ela está certa ou errada.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -533,7 +562,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "Qual parte de você está pedindo mais atenção e desenvolvimento neste momento?",
       writing: "Escreva sobre uma qualidade interior que deseja fortalecer. Por que ela é importante e como sua vida poderá mudar quando você a desenvolver?",
       action: "Reserve dez minutos para uma prática de crescimento interior: escrever, meditar, estudar ou ter uma conversa consciente.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -546,7 +575,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "O que você está tornando mais pesado do que realmente precisa ser?",
       writing: "Descreva uma situação que tem consumido sua energia. Depois escreva como poderia enfrentá-la com mais simplicidade e leveza.",
       action: "Escolha uma preocupação e faça apenas o próximo passo possível, sem tentar resolver tudo de uma vez.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -559,7 +588,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "Você está tentando parecer bom para alguém enquanto deixa de ser honesto consigo?",
       writing: "Escreva duas frases: ‘Para parecer bom, eu tenho...’ e ‘Para ser íntegro, eu preciso...’. Observe a diferença entre as respostas.",
       action: "Pratique hoje uma atitude honesta e respeitosa que esteja alinhada com seus valores.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -572,7 +601,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "Em que situação você sente que precisa usar uma máscara para ser aceito?",
       writing: "Descreva a máscara, o que ela tenta proteger e o que você gostaria de expressar com mais autenticidade.",
       action: "Em uma interação segura hoje, permita-se expressar uma opinião, necessidade ou sentimento verdadeiro com respeito.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -585,7 +614,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "O que significaria ser fiel a você mesmo hoje?",
       writing: "Escreva uma promessa simples para este dia. Ela deve depender de você e representar uma escolha coerente com seus valores.",
       action: "Leia sua promessa em voz alta e cumpra-a antes de dormir.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -598,7 +627,7 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "Se algo externo mudasse hoje, qual parte de você ainda permaneceria?",
       writing: "Liste cinco características, valores ou capacidades que fazem parte da sua essência e não dependem de posses, títulos ou aprovação.",
       action: "Escolha um item da lista e demonstre essa qualidade em uma ação concreta.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     },
 
     {
@@ -611,7 +640,407 @@ Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valo
       question: "O que você busca fora de si para evitar sentir ou escutar o que existe dentro?",
       writing: "Escreva sobre um desejo externo recorrente. Que sensação você espera obter quando ele for satisfeito? De que maneira pode cultivar uma parte dessa sensação internamente?",
       action: "Passe dez minutos sem celular, música ou distrações. Apenas observe sua respiração, pensamentos e sensações.",
-      credit: "Simplesmente Ser"
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 11, page: 22, theme: "Pensamento e identidade", title: "A raiz do eu",
+      original: "O PENSAMENTO É A RAIZ DO EU",
+      reflection: "Grande parte da identidade que defendemos é formada por pensamentos repetidos: histórias, julgamentos, lembranças e definições sobre quem somos. Observar o pensamento permite reconhecer que somos também a consciência capaz de percebê-lo.",
+      question: "Qual pensamento repetido tem definido quem você acredita ser?",
+      writing: "Escreva uma frase que costuma usar para definir a si mesmo. Depois investigue: isso é uma verdade permanente ou um pensamento aprendido?",
+      action: "Quando esse pensamento surgir hoje, diga mentalmente: ‘Estou percebendo um pensamento; ele não é toda a minha identidade.’",
+      credit: "Krishnamurti — crédito conforme o livro."
+    },
+
+    {
+      number: 12, page: 23, theme: "Vida e sentido", title: "O sentido de viver",
+      original: "O QUE É A MORTE??\nO FIM DO PENSAR\nSE A VIDA NÃO CONTINUA, QUAL O SENTIDO DELA?\nSE NÃO HOUVER UMA RECOMPENSA POR VIVER CORRETAMENTE, QUAL O SENTIDO DE SER BOM OU CORRETO?",
+      reflection: "Perguntar sobre a morte também é perguntar sobre o significado da vida. Quando nossas escolhas dependem apenas de uma recompensa futura, podemos perder a oportunidade de viver com bondade, presença e integridade pelo valor que essas atitudes possuem agora.",
+      question: "Se não existisse recompensa ou reconhecimento, quais valores você ainda escolheria viver?",
+      writing: "Liste três valores que tornam sua vida significativa independentemente da opinião dos outros ou de uma recompensa futura.",
+      action: "Pratique hoje um desses valores em uma atitude que ninguém precisa testemunhar.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 13, page: 24, theme: "Consciência", title: "Existir em plenitude",
+      original: "A MORTE SÓ EXISTE ONDE HÁ ESQUECIMENTO DO SER. SUA IMORTALIDADE É DETERMINADA PELO SEU ESTADO DE CONSCIÊNCIA, PELA CLAREZA COM QUE VOCÊ ESCOLHE A VIDA — NÃO APENAS SOBREVIVER, MAS EXISTIR EM PLENITUDE.",
+      reflection: "Sobreviver é responder às exigências do dia; existir em plenitude é permanecer consciente de quem somos enquanto fazemos isso. A vida ganha profundidade quando deixamos o modo automático e participamos das escolhas com presença.",
+      question: "Em qual área você está apenas sobrevivendo, em vez de viver com plenitude?",
+      writing: "Descreva como essa área funciona hoje e como seria vivê-la com mais presença, verdade e vitalidade.",
+      action: "Faça uma escolha consciente nessa área que interrompa, mesmo por alguns minutos, o modo automático.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 14, page: 25, theme: "Evolução", title: "Sinceridade que liberta",
+      original: "O processo de evolução exige sinceridade consigo mesmo. Quando paramos de fugir daquilo que nos limita, começamos a abrir espaço para o novo. Crescer dói…, mas nos liberta.",
+      reflection: "A transformação começa quando conseguimos olhar para aquilo que nos limita sem negação e sem crueldade. A sinceridade interior pode doer, mas também devolve a capacidade de escolher e criar algo novo.",
+      question: "De qual limitação você tem fugido ou tentado não falar consigo mesmo?",
+      writing: "Nomeie essa limitação com honestidade. Escreva como ela o protege, como o restringe e o que poderá surgir quando você começar a enfrentá-la.",
+      action: "Dê um passo pequeno e seguro em direção àquilo que você vem evitando.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 15, page: 26, theme: "Aprendizado", title: "Aprender é agir",
+      original: "APRENDER É AGIR\nAPRENDER NÃO ESTÁ SEPARADO DA AÇÃO\nEU NÃO PERCO TEMPO COM O COMO\nEU APENAS AJO.",
+      reflection: "Conhecimento sem aplicação permanece apenas como possibilidade. Aprender verdadeiramente envolve experimentar, observar resultados, corrigir a direção e agir novamente.",
+      question: "O que você já sabe que precisa fazer, mas continua mantendo apenas no campo das ideias?",
+      writing: "Escreva o conhecimento que deseja aplicar e transforme-o em um primeiro passo simples, específico e possível.",
+      action: "Execute esse primeiro passo hoje, antes de buscar mais informação sobre o assunto.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 16, page: 27, theme: "Ego", title: "O obstáculo interior",
+      original: "NOSSO EGO, QUANDO DESCONTROLADO, PODE SE TORNAR O MAIOR OBSTÁCULO ENTRE QUEM SOMOS E QUEM PODEMOS SER.",
+      reflection: "O ego tenta proteger uma imagem conhecida de nós mesmos. Quando assume o controle, pode rejeitar críticas, mudanças e vulnerabilidade, impedindo que novas capacidades sejam desenvolvidas.",
+      question: "Em que situação a necessidade de proteger sua imagem tem impedido seu crescimento?",
+      writing: "Descreva uma situação em que você sentiu necessidade de estar certo, parecer forte ou evitar admitir algo. O que poderia aprender se não precisasse defender essa imagem?",
+      action: "Pratique hoje uma atitude de abertura: escute uma opinião, admita uma dúvida ou reconheça um erro sem se diminuir.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 17, page: 28, theme: "Amor-próprio", title: "Amar a si para amar",
+      original: "AMO A MIM MESMO PARA AMAR OS OUTROS",
+      reflection: "O amor oferecido aos outros torna-se mais saudável quando não depende do abandono de nós mesmos. Respeitar limites, necessidades e dignidade pessoal permite amar sem submissão, ressentimento ou dependência.",
+      question: "Você tem oferecido aos outros o cuidado que também precisa oferecer a si?",
+      writing: "Escreva como você demonstra amor às pessoas importantes. Depois escolha uma dessas formas de cuidado para direcionar a si mesmo.",
+      action: "Realize hoje um gesto concreto de autocuidado sem culpa.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 18, page: 29, theme: "Sombra", title: "Reconhecer as sombras",
+      original: "QUESTIONE-SE\nONDE ESTÃO MINHAS SOMBRAS AGORA?\nAS SOMBRAS SÃO SEMPRE nossas partes negadas, os aspectos que evitamos olhar, são como irmãs silenciosas que nos acompanham esperando ser reconhecidas. Quando deixamos de notar onde elas estão, é provável que os problemas estejam a caminho. Quando não podemos vê-las é hora de tomar cuidado.",
+      reflection: "A sombra reúne aspectos que recusamos reconhecer em nós. Quando são ignorados, eles podem aparecer em reações intensas, julgamentos e padrões repetidos. Reconhecê-los não é condená-los, mas trazê-los à consciência para poder escolher.",
+      question: "Qual característica dos outros provoca em você uma reação intensa e o que ela pode revelar sobre sua própria sombra?",
+      writing: "Descreva a reação sem justificá-la. Pergunte: onde essa característica, necessidade ou medo também aparece em mim, mesmo de outra forma?",
+      action: "Observe hoje uma reação automática e faça uma pausa antes de atribuir toda a causa ao outro.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 19, page: 30, theme: "Negação", title: "Aquilo que deixamos de notar",
+      original: "NEGAÇÃO\nENQUANTO A NEGAÇÃO PERMANECER TALVEZ NEM SEQUER NOTAMOS QUE DEIXAMOS DE NOTAR",
+      reflection: "A negação pode proteger temporariamente de uma verdade difícil, mas também reduz nossa percepção. Com o tempo, podemos nos acostumar tanto a evitar determinado assunto que deixamos até de perceber o esforço usado para escondê-lo.",
+      question: "Existe algo evidente em sua vida que você evita nomear?",
+      writing: "Complete sem censura: ‘Se eu fosse completamente honesto comigo agora, reconheceria que...’. Depois escreva o que teme que aconteça ao admitir isso.",
+      action: "Nomeie essa realidade em uma frase privada e escolha um passo seguro para lidar com ela.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 20, page: 31, theme: "Vontade", title: "Pensamento em movimento",
+      original: "A VONTADE É O QUE TRANSFORMA O PENSAMENTO EM ENERGIA",
+      reflection: "Pensamentos indicam possibilidades; a vontade concentra energia e a direciona para uma escolha. Ela se fortalece quando transformamos intenção em comportamento repetido, mesmo em pequena escala.",
+      question: "Qual pensamento importante precisa receber a força da sua vontade?",
+      writing: "Escreva uma intenção que tem permanecido parada. Defina o comportamento diário que mostraria que essa intenção começou a ganhar energia.",
+      action: "Pratique esse comportamento por pelo menos cinco minutos hoje.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 21, page: 32, theme: "Projeção e conflito", title: "O ciclo da defesa",
+      original: "NOS IMAGINAMOS TÃO PERSEGUIDOS PELO ÓDIO QUE O ÓDIO ACABA NASCENDO NOS OUTROS EM RESPOSTA AOS NOSSOS DESTRUTIVOS MECANISMOS DE DEFESA. O OUTRO SENTE O NOSSO MECANISMO DE DEFESA COMO OPOSIÇÃO GRATUITA E ELE PROJETA A SUA SOMBRA SOBRE NÓS, REAGIMOS COM A NOSSA DEFENSIVA, CAUSANDO MAIS ÓDIO E ASSIM SUCESSIVAMENTE.",
+      reflection: "Quando esperamos hostilidade, podemos nos defender antes de existir uma ameaça real. O outro percebe fechamento ou ataque e reage, confirmando o medo inicial. Reconhecer o ciclo permite interrompê-lo antes que a defesa produza o conflito que tentava evitar.",
+      question: "Em qual relação você pode estar reagindo ao medo de ser atacado antes de realmente escutar o outro?",
+      writing: "Descreva o ciclo: o que você teme, como se defende, como o outro reage e como essa reação confirma seu medo.",
+      action: "Na próxima interação segura, substitua uma resposta defensiva por uma pergunta sincera de esclarecimento.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 22, page: 33, theme: "Essência", title: "Além das identidades",
+      original: "Às vezes, criamos tantas camadas de identidade que acabamos sufocando a nossa verdadeira essência.",
+      reflection: "Papéis, títulos e expectativas ajudam a organizar a vida, mas podem se tornar máscaras rígidas. A essência reaparece quando perguntamos o que sentimos e valorizamos antes de responder automaticamente ao papel que esperam de nós.",
+      question: "Qual papel ou identidade está ocupando espaço demais em sua vida?",
+      writing: "Liste os papéis que desempenha. Ao lado de cada um, escreva o que ele permite expressar e o que ele costuma silenciar em você.",
+      action: "Faça hoje algo simples que expresse quem você é para além dos seus papéis.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 23, page: 34, theme: "Propósito", title: "O que faz o tempo voar",
+      original: "PERGUNTE-SE\nQUE ATIVIDADES ME ENERGIZAM?\nO QUE EU TENHO PRAZER EM FAZER?\nEM QUE EU ME ENVOLVO TANTO QUE O TEMPO PARECE VOAR?\nO QUE EU FARIA ATÉ DE GRAÇA?\nO QUE AS PESSOAS ME PEDEM, POIS EU FAÇO MELHOR?",
+      reflection: "Propósito não precisa surgir como uma resposta única e grandiosa. Ele pode ser descoberto observando onde existe energia, prazer, concentração e contribuição natural.",
+      question: "Que atividade reúne prazer, capacidade e utilidade para outras pessoas?",
+      writing: "Responda separadamente às cinco perguntas do texto original. Depois circule os padrões que aparecem em mais de uma resposta.",
+      action: "Reserve hoje vinte minutos para uma atividade ligada a um dos padrões identificados.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 24, page: 35, theme: "Serenidade", title: "Proteger o interior",
+      original: "Jamais permita que qualquer condição externa produza feridas internas. Mantenha a calma e a serenidade a todo instante.",
+      reflection: "Não controlamos todas as condições externas, mas podemos aprender a cuidar da forma como elas permanecem dentro de nós. Serenidade não é negar a dor; é criar espaço para responder sem permitir que o acontecimento determine toda a nossa identidade.",
+      question: "Que situação externa continua ocupando e ferindo seu espaço interior?",
+      writing: "Separe em duas colunas: o que depende de você e o que não depende. Escreva como pode cuidar daquilo que está sob sua responsabilidade.",
+      action: "Diante de uma tensão hoje, respire lentamente três vezes antes de responder.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 25, page: 36, theme: "Silêncio", title: "O intervalo da compreensão",
+      original: "Silêncio\nSÓ PODERÁS ESCUTAR VERDADEIRAMENTE QUANDO SUA MENTE ESTIVER QUIETA, AO NÃO REAGIR IMEDIATAMENTE, QUANDO HOUVER UM INTERVALO ENTRE A REAÇÃO E O QUE SE ESCUTA. ENTÃO NESSE INTERVALO HÁ QUIETUDE, SILÊNCIO. Só nesse silêncio há compreensão, QUE NÃO É COMPREENSÃO INTELECTUAL... ESTE INTERVALO É O CÉREBRO NOVO.",
+      reflection: "Escutar exige mais do que ouvir palavras. Quando suspendemos por alguns instantes a resposta pronta, criamos um intervalo no qual podemos perceber o outro, a situação e nossas próprias reações com maior clareza.",
+      question: "O que você costuma preparar para responder antes que o outro termine de falar?",
+      writing: "Recorde uma conversa difícil. Escreva o que foi dito, o que você interpretou imediatamente e o que talvez pudesse ter percebido com mais silêncio.",
+      action: "Em uma conversa hoje, espere dois segundos depois que a pessoa terminar antes de responder.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 26, page: 37, theme: "Consciência", title: "Suspender a reação",
+      original: "A REAÇÃO IMEDIATA É O CÉREBRO VELHO. FUNCIONA SEGUNDO SUA PRÓPRIA TENDÊNCIA, SEU PRÓPRIO CONDICIONAMENTO TRADICIONAL, RECONHECIDO, REACIONÁRIO. QUANDO HÁ UM INTERVALO, UMA SUSPENSÃO DESTA REAÇÃO, PERCEBERÁ ENTÃO QUE O CÉREBRO NOVO ATUA E SÓ ESTE É CAPAZ DE COMPREENDER COISAS NOVAS E NÃO O CÉREBRO VELHO. ALGUMA VEZ, VOCÊ JÁ SE SENTOU EM SILÊNCIO?",
+      reflection: "A reação imediata costuma repetir aprendizados antigos. A pausa não elimina emoções, mas impede que todo o comportamento seja decidido por condicionamentos que talvez já não sirvam ao presente.",
+      question: "Qual reação automática se repete quando você se sente ameaçado, criticado ou rejeitado?",
+      writing: "Descreva o gatilho, a reação habitual e a consequência. Em seguida escreva uma resposta alternativa que represente quem você é hoje.",
+      action: "Ao perceber esse gatilho, adie sua resposta por alguns minutos sempre que for seguro fazê-lo.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 27, page: 38, theme: "Atenção plena", title: "Ouvir o presente",
+      original: "SEM QUE SUA MENTE — ATENÇÃO PLENA — ESTIVESSE FIXADA EM ALGUMA COISA? SEM SE FAZER QUALQUER ESFORÇO PARA SE CONCENTRAR? COM A MENTE MUITO SILENCIOSA, COMPLETAMENTE QUIETA? SE FIZER ISTO OUVIRÁ TUDO! OUVIRÁ OS RUÍDOS DISTANTES TÃO BEM QUANTO AQUELES SONS QUE O CERCA. E O QUE SIGNIFICA ESTAR OUVINDO TUDO? ESTAR VERDADEIRAMENTE NO PRESENTE.",
+      reflection: "A atenção plena não precisa forçar a mente a excluir o mundo. Ela pode abrir a percepção para sons, sensações e pensamentos sem agarrá-los, trazendo-nos de volta ao que está acontecendo agora.",
+      question: "Quanto do seu dia você vive percebendo o presente, e quanto vive absorvido por pensamentos?",
+      writing: "Registre cinco sons, cinco sensações corporais e cinco elementos visuais que consegue perceber neste momento.",
+      action: "Faça uma pausa de três minutos e apenas escute os sons próximos e distantes, sem classificá-los.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 28, page: 39, theme: "Desapego", title: "Usufruir sem possuir",
+      original: "UM MESTRE DE SI MESMO SIMPLESMENTE APROVEITA O AGORA. ELE SABE QUE NÃO POSSUI NADA, ELE SABE QUE NÃO SOMOS DONOS DE NADA E SÓ ASSIM USUFRUI DE TUDO SEM SER PROPRIETÁRIO DE NADA.",
+      reflection: "Quando confundimos prazer com posse, o medo de perder pode impedir que desfrutemos aquilo que já está presente. O desapego permite cuidar, agradecer e participar sem exigir controle absoluto.",
+      question: "O que você tenta controlar por medo de perder?",
+      writing: "Escreva o que essa pessoa, experiência ou objeto oferece à sua vida e como poderia apreciá-lo sem transformá-lo em propriedade emocional.",
+      action: "Aprecie conscientemente algo hoje sem fotografar, guardar ou tentar prolongar o momento.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 29, page: 40, theme: "Aceitação", title: "Usufruir do momento nublado",
+      original: "NÃO HÁ NECESSIDADE DE POSSUIR NADA, APENAS USAR O QUE ESTÁ LÁ NAQUELE MOMENTO. ASSIM COMO VOCÊ USUFRUI DO SOL, DA LUA E DO VENTO SEM SER DONO DELES E SEM OS POSSUIR. SE UM DIA O SOL ESTIVER COBERTO DE NUVENS, NÃO PRECISA FICAR ANSIOSO OU REAGIR A ISTO. NÃO PRECISA ENLOUQUECER. APENAS USUFRUA DESTE MOMENTO NUBLADO.",
+      reflection: "A vida alterna claridade e nuvens. Sofremos ainda mais quando exigimos que o momento atual seja igual ao anterior. Aceitar a condição presente permite descobrir o que ela oferece e agir a partir da realidade.",
+      question: "Que ‘dia nublado’ da sua vida você ainda está comparando com um período mais ensolarado?",
+      writing: "Descreva o que mudou, o que você perdeu e quais possibilidades ou aprendizados existem no momento atual.",
+      action: "Encontre e valorize uma coisa possível ou boa dentro da condição presente.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 30, page: 41, theme: "Presença", title: "O momento não é propriedade",
+      original: "NÃO PRECISA SE PREOCUPAR E GRITAR: ‘O QUE ESTÁ ACONTECENDO COM MEU SOL?’ ISTO NÃO TEM NADA A VER COM VOCÊ. USUFRUA DO MOMENTO COM TUDO QUE ELE POSSUI. ISSO É GRANDIOSO!",
+      reflection: "Nem toda mudança é uma mensagem pessoal ou uma injustiça dirigida a nós. Quando deixamos de interpretar cada nuvem como perda do ‘nosso sol’, podemos participar do momento com menos resistência e mais curiosidade.",
+      question: "Que mudança você está interpretando como se fosse pessoalmente contra você?",
+      writing: "Descreva a situação primeiro sem interpretações, apenas com fatos. Depois observe quais significados sua mente acrescentou.",
+      action: "Ao encontrar uma mudança hoje, pergunte: ‘O que este momento possui e como posso estar presente nele?’",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 31, page: 42, theme: "Unidade", title: "Uma única onda",
+      original: "SOMOS UMA ÚNICA ONDA, ONDA QUE NUNCA DESAPARECE, POIS ESTÁ DENTRO DA ONDA DO TODO. DE LÁ SAI E PARA LÁ VOLTA. NADA PODE SUMIR OU DESAPARECER. NADA SE CRIA, TUDO SE TRANSFORMA.",
+      reflection: "Assim como uma onda possui forma própria sem estar separada do oceano, cada pessoa vive uma experiência singular dentro de algo maior. Mudanças e perdas transformam a forma, mas não anulam tudo o que foi vivido, aprendido e transmitido.",
+      question: "O que está se transformando em sua vida e você ainda interpreta apenas como desaparecimento?",
+      writing: "Descreva uma perda ou mudança e registre o que dela continua vivo em aprendizados, lembranças, valores ou novas possibilidades.",
+      action: "Reconheça hoje uma transformação e agradeça conscientemente por aquilo que ela deixou em você.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 32, page: 43, theme: "Percepção", title: "Cada ser tem um mundo",
+      original: "SÓ VÊ O QUE SE QUER VER. SÓ OUVE O QUE QUER OUVIR. SÓ ENTENDE O QUE QUER ENTENDER. CADA SER TEM UM PRÓPRIO MUNDO.",
+      reflection: "Nossa percepção é influenciada por crenças, desejos, medos e experiências anteriores. Duas pessoas podem viver a mesma situação e construir significados diferentes. Reconhecer esse filtro aumenta a capacidade de escutar e aprender.",
+      question: "Que conclusão você está tratando como fato sem considerar outra perspectiva?",
+      writing: "Descreva uma situação a partir do seu ponto de vista e depois tente descrevê-la honestamente a partir do ponto de vista de outra pessoa envolvida.",
+      action: "Faça uma pergunta antes de presumir que já entendeu a intenção de alguém.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 33, page: 44, theme: "Propósito", title: "A direção da trajetória",
+      original: "O PROPÓSITO DEFINE TODA A TRAJETÓRIA DE UMA VIDA. É UMA VONTADE INABALÁVEL.",
+      reflection: "Propósito funciona como direção, não como garantia de uma estrada sem desvios. Quando sabemos por que algo importa, podemos ajustar os caminhos sem abandonar aquilo que dá sentido à jornada.",
+      question: "Qual propósito merece orientar suas decisões nesta fase da vida?",
+      writing: "Complete: ‘Quero usar minha vida, minhas experiências e minhas capacidades para...’. Depois escreva três decisões coerentes com essa direção.",
+      action: "Escolha uma das três decisões e realize hoje seu primeiro movimento.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 34, page: 45, theme: "Ser e fazer", title: "Viver além do desempenho",
+      original: "TEMOS COMO BASE UMA CULTURA VOLTADA PARA O LOGOS: ESTE TIPO DE ATITUDE PARA A QUAL SOMOS TODOS MAIS OU MENOS PROPENSOS A DAR MAIS VALOR AO FAZER DO QUE AO SER, AO ALCANÇAR DO QUE VIVENCIAR, AO PENSAR DO QUE AO SENTIR, E ASSIM PASSAMOS PELA VIDA SEM REALMENTE VIVER PLENAMENTE.",
+      reflection: "Resultados, produtividade e pensamento são importantes, mas não substituem presença, sentimento e experiência. Quando o valor pessoal depende apenas do que fazemos, nunca parece existir um momento suficiente para simplesmente estar vivo.",
+      question: "Quanto do seu valor pessoal está preso ao que você produz ou alcança?",
+      writing: "Escreva quem você é sem mencionar profissão, conquistas, bens, tarefas ou funções desempenhadas.",
+      action: "Faça hoje algo sem objetivo de desempenho: apenas para sentir, contemplar ou estar presente.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 35, page: 46, theme: "Autoconhecimento", title: "Uma descoberta única",
+      original: "AUTOCONHECIMENTO\nA vida é um mistério e nosso lugar nela é uma descoberta onde cada um de nós realizaremos a de uma maneira diferente e única.",
+      reflection: "Autoconhecimento não oferece uma fórmula igual para todos. Ele é uma investigação contínua de valores, limites, desejos e escolhas, realizada dentro da história única de cada pessoa.",
+      question: "Que descoberta recente sobre você está mudando a maneira como ocupa seu lugar no mundo?",
+      writing: "Descreva algo que hoje entende sobre si e que não compreendia há um ano. O que essa descoberta pede de você agora?",
+      action: "Tome uma pequena decisão coerente com aquilo que aprendeu sobre si.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 36, page: 47, theme: "Renovação", title: "Um novo sonho nasce",
+      original: "NESTE EXATO INSTANTE UM VELHO SONHO ESTÁ MORRENDO E UM NOVO ESTÁ NASCENDO.",
+      reflection: "Alguns sonhos pertencem a versões anteriores de nós. Permitir que terminem não significa fracasso; pode significar que a vida, os valores e a consciência mudaram, abrindo espaço para uma direção mais verdadeira.",
+      question: "Qual sonho antigo você precisa liberar para reconhecer aquilo que está começando a nascer?",
+      writing: "Escreva uma despedida ao sonho antigo: o que ele ensinou e por que já não representa totalmente você. Depois descreva o novo desejo que começa a aparecer.",
+      action: "Abra espaço concreto para o novo removendo hoje um compromisso, objeto ou expectativa ligada ao sonho antigo.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 37, page: 48, theme: "Questionamento", title: "A dúvida que esclarece",
+      original: "QUESTIONAMENTOS\nA DÚVIDA É UMA COISA PRECIOSA. ELA LIMPA E PURIFICA A MENTE. O PRÓPRIO ATO DE QUESTIONAR, O PRÓPRIO FATO DE QUE A SEMENTE DA DÚVIDA ESTÁ PLANTADA, AJUDA A ESCLARECER NOSSOS PROCESSOS INVESTIGATIVOS. NÃO PARE DE QUESTIONAR NUNCA!",
+      reflection: "A dúvida consciente não precisa paralisar. Ela pode abrir espaço entre uma crença automática e uma compreensão mais profunda. Questionar com honestidade é investigar, não rejeitar tudo indiscriminadamente.",
+      question: "Qual certeza sua merece ser examinada com mais profundidade?",
+      writing: "Escolha uma certeza e pergunte: como aprendi isso, quais evidências a sustentam, o que a contradiz e o que mudaria se ela não fosse absoluta?",
+      action: "Pesquise ou converse com alguém que apresente uma perspectiva diferente da sua.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 38, page: 49, theme: "Caminho próprio", title: "Desenhar o caminho",
+      original: "Cada um de nós precisa encontrar seu próprio caminho para a compreensão. Não existem mapas prontos, apenas a jornada que vamos desenhando ao caminhar.",
+      reflection: "Orientações podem ajudar, mas nenhuma pessoa pode viver nossa experiência ou decidir integralmente por nós. O caminho se revela através de escolhas, resultados, correções e presença durante a caminhada.",
+      question: "Em qual área você está esperando um mapa perfeito antes de começar?",
+      writing: "Descreva o destino que deseja sem tentar definir todo o trajeto. Qual é apenas o próximo ponto que consegue enxergar?",
+      action: "Dê o próximo passo possível e permita que ele revele a etapa seguinte.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 39, page: 50, theme: "Autenticidade", title: "Um instante consciente",
+      original: "VIVER COM AUTENTICIDADE E PROPÓSITO EM UM ÚNICO INSTANTE PODE TER MAIS VALOR DO QUE UMA VIDA INTEIRA SEM CONSCIÊNCIA.",
+      reflection: "A qualidade de um instante consciente pode interromper anos de repetição automática. Autenticidade começa agora, quando pensamento, sentimento e ação se aproximam daquilo que reconhecemos como verdadeiro.",
+      question: "O que seria viver este momento com mais autenticidade e propósito?",
+      writing: "Escreva o que sente, o que pensa, o que deseja e o que está fazendo. Onde existe alinhamento e onde existe distância?",
+      action: "Escolha uma atitude imediata que diminua essa distância.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 40, page: 51, theme: "Autoestima", title: "Examinar as escolhas",
+      original: "EXAMINE SUA AUTOESTIMA. ABANDONE SEUS PRÉ-CONCEITOS. PRESTE ATENÇÃO ÀS SUAS ESCOLHAS.",
+      reflection: "Autoestima aparece não apenas no que dizemos sobre nós, mas nas escolhas que repetimos: o que aceitamos, como cuidamos do corpo, quais relações mantemos e quanto respeitamos nossas necessidades.",
+      question: "Que escolha recorrente revela como você tem avaliado seu próprio valor?",
+      writing: "Liste três escolhas que fortalecem sua autoestima e três que a enfraquecem. Observe quais preconceitos sobre si sustentam as escolhas negativas.",
+      action: "Substitua hoje uma escolha que o enfraquece por outra que demonstre autorrespeito.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 41, page: 52, theme: "Liberdade", title: "Uma liberdade singular",
+      original: "CADA SER IRÁ ENCONTRAR A LIBERDADE DE UMA MANEIRA DIFERENTE.",
+      reflection: "Liberdade não possui a mesma forma para todos. Para uma pessoa pode ser estabelecer limites; para outra, aceitar ajuda, mudar de direção, expressar a própria voz ou deixar de fugir de um compromisso.",
+      question: "O que liberdade significa concretamente para você nesta fase?",
+      writing: "Complete: ‘Eu me sinto livre quando...’ e ‘Eu abandono minha liberdade quando...’. Use exemplos reais, não conceitos abstratos.",
+      action: "Realize uma pequena escolha que represente sua definição atual de liberdade.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 42, page: 53, theme: "Presença", title: "Não fugir para o ideal",
+      original: "NÃO PROJETE DISTANTES IDEAIS. ESTA É UMA TÁTICA QUE DESVIA ARDILOSAMENTE A ATENÇÃO DO AGORA, UMA MANEIRA DE ESQUIVAR-SE DE SUAS RESPONSABILIDADES. NÃO PROJETE UM NOVO IDEAL AO QUE SE DEVA MOLDAR-SE, GERANDO UMA VÃ ESPERANÇA DE EVOLUIR PARA UM FUTURO MELHOR, DEIXANDO DE VIVER O REAL, O AQUI AGORA.",
+      reflection: "Ideais podem inspirar, mas também podem virar esconderijos. Quando imaginamos continuamente a pessoa que seremos, evitamos olhar para as escolhas e responsabilidades da pessoa que somos hoje.",
+      question: "Qual versão futura de você tem servido como desculpa para adiar uma mudança presente?",
+      writing: "Descreva o ideal futuro e identifique quais comportamentos dele já podem ser praticados hoje, mesmo de forma imperfeita.",
+      action: "Pratique agora um comportamento da pessoa que você afirma querer se tornar.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 43, page: 54, theme: "Libertação", title: "Demolir a prisão",
+      original: "SE VOCÊ É UM PRISIONEIRO, NÃO ME INTERESSA DESCREVER O QUE É LIBERDADE. MEU INTERESSE PRINCIPAL É MOSTRAR O QUE CRIA A SUA PRISÃO E ORIENTÁ-LO A FIM DE QUE VOCÊ A DESTRUA. DEMOLIR A PRISÃO SIGNIFICA ENFRENTAR UMA APROXIMAÇÃO DOLOROSA DE ‘O QUE É’ EM VEZ DE PERSEGUIR UMA PROMESSA MUITAS VEZES ILUSÓRIA DE ‘O QUE DEVERIA SER’ EM ALGUM FUTURO DISTANTE. NO TEMPO NADA É POSSÍVEL.",
+      reflection: "Imaginar a liberdade não remove aquilo que nos aprisiona. A transformação começa ao identificar concretamente as grades: medos, dependências, crenças, hábitos ou condições que precisam ser enfrentados no presente.",
+      question: "Quais são as grades reais da prisão que você deseja deixar?",
+      writing: "Nomeie cada grade e escreva como ela é mantida. Diferencie o que depende de uma ação sua do que exige apoio, tempo ou mudança externa.",
+      action: "Comece a enfraquecer uma dessas grades com uma ação segura e específica.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 44, page: 55, theme: "Energia emocional", title: "Fechar as rachaduras",
+      original: "MUDAR NOSSOS ESTADOS INTERNOS — HUMORES, EMOÇÕES E MEDOS. PARA REUNIR TODA A ENERGIA E FORÇA NECESSÁRIAS PARA REDIRECIONAR SEUS PENSAMENTOS OU DOMINAR UMA EMOÇÃO, É PRECISO ELIMINAR AS FALHAS INTERNAS — AQUELAS MILHARES DE PEQUENAS RACHADURAS EMOCIONAIS POR ONDE SUA ENERGIA ESCAPA SILENCIOSAMENTE. EMOÇÕES DENSAS E ATITUDES NEGATIVAS AGEM COMO VAZAMENTOS INVISÍVEIS.",
+      reflection: "A energia pode se dispersar em preocupações repetidas, ressentimentos, autocrítica e conflitos não resolvidos. Perceber esses vazamentos permite direcionar atenção para aquilo que realmente precisa de cuidado.",
+      question: "Por onde sua energia emocional tem escapado silenciosamente?",
+      writing: "Liste as situações, pensamentos e hábitos que mais drenam sua energia. Ao lado, marque: resolver, aceitar, limitar, pedir ajuda ou abandonar.",
+      action: "Escolha um vazamento e faça hoje a ação correspondente que estiver ao seu alcance.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 45, page: 56, theme: "Estados interiores", title: "Voltar do efeito à causa",
+      original: "QUANDO UM EVENTO SURGE NA SUA VIDA E VOCÊ NÃO RECONHECE O ESTADO DE SER QUE O CRIOU, PERDE UMA OPORTUNIDADE VALIOSA DE CURA. PRESTAR ATENÇÃO AOS SEUS ESTADOS PSICOLÓGICOS É APRENDER A VOLTAR DO EFEITO PARA A CAUSA. E ALI, NESSE PONTO DE ORIGEM, É POSSÍVEL TRANSFORMAR TUDO — CURANDO SUA VIDA DE DENTRO PARA FORA, PARA SEMPRE.",
+      reflection: "Nem todo acontecimento externo é criado por nós, mas nossos estados interiores influenciam percepções, decisões e respostas. Investigar essa participação devolve responsabilidade sem transformar toda dor em culpa.",
+      question: "Que estado interior contribuiu para uma escolha ou reação cujas consequências você vive hoje?",
+      writing: "Descreva o acontecimento, diferencie o que estava e o que não estava sob seu controle e identifique o estado psicológico que influenciou sua resposta.",
+      action: "Antes de uma decisão hoje, nomeie seu estado emocional e espere recuperar clareza quando necessário.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 46, page: 57, theme: "Independência emocional", title: "Devolver o próprio poder",
+      original: "A DEPENDÊNCIA É A MAIOR DOENÇA DA ALMA HUMANA. NADA ENFRAQUECE MAIS DO QUE DEPENDER DO OUTRO: DE SUA PRESENÇA, DA SUA APROVAÇÃO, DO SEU JULGAMENTO. LIBERTAR-SE DISSO EXIGE UM MERGULHO PROFUNDO E VERDADEIRO EM SI. MAS É ESSE TRABALHO QUE TE DEVOLVE O PODER.",
+      reflection: "Vínculos saudáveis envolvem apoio mútuo, mas não exigem que outra pessoa determine nosso valor ou nossa identidade. Recuperar autonomia emocional é aprender a escutar a si sem deixar de se relacionar.",
+      question: "De quem você espera a aprovação necessária para se sentir suficiente?",
+      writing: "Escreva o que gostaria de ouvir dessa pessoa. Depois transforme essa mensagem em um reconhecimento verdadeiro que você pode começar a oferecer a si.",
+      action: "Tome hoje uma pequena decisão pessoal sem pedir validação desnecessária.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 47, page: 58, theme: "Responsabilidade", title: "Assumir o próprio leme",
+      original: "SE VOCÊ DEPENDER DE POLÍTICOS PARA SUA LIBERDADE EXTERNA, E DE RELIGIÕES PARA A PAZ INTERIOR, SE FRUSTRARÁ ETERNAMENTE. A VIDA SÓ MUDA QUANDO VOCÊ ASSUME O PRÓPRIO LEME.",
+      reflection: "Estruturas sociais e comunidades espirituais podem influenciar profundamente a vida, mas não substituem nossa participação. Assumir o leme é reconhecer o que podemos escolher, construir e transformar dentro das condições existentes.",
+      question: "Em qual área você entregou completamente a outra pessoa ou instituição a responsabilidade por sua mudança?",
+      writing: "Separe o que depende de fatores externos daquilo que ainda pode ser decidido, aprendido ou praticado por você.",
+      action: "Assuma hoje uma responsabilidade específica que você vinha transferindo.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 48, page: 59, theme: "Projeção", title: "O mundo interior projetado",
+      original: "VEJA O MUNDO COMO ELE É, UMA PROJEÇÃO EXATA DO SEU SER INTERIOR. CONFORME OS SEUS ESTADOS E CONDIÇÕES INTERIORES, O MUNDO APARECE E DESAPARECE À VONTADE, PODENDO SE TORNAR ALGO ESTRANHO E VIOLENTO, SE VOCÊ SE ESQUECER DE QUE VOCÊ PRÓPRIO CRIA O SEU MUNDO.",
+      reflection: "Nosso estado interior colore aquilo que percebemos. Ansiedade pode fazer o mundo parecer ameaçador; esperança pode revelar possibilidades antes invisíveis. Isso não elimina fatos externos, mas ajuda a distinguir realidade de projeção.",
+      question: "Como seu estado emocional atual está colorindo a maneira como você enxerga o mundo?",
+      writing: "Descreva uma situação como ela parece quando você está tenso e como parece quando está sereno. Quais fatos permanecem iguais?",
+      action: "Regule seu estado com respiração, pausa ou movimento antes de concluir o significado de uma situação.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
+    },
+
+    {
+      number: 49, page: 60, theme: "Projeção", title: "O espelho de Narciso",
+      original: "O MITO DO NARCISO É A METÁFORA DE UM HOMEM QUE SE TORNA VÍTIMA DO MUNDO QUE É A SUA PRÓPRIA PROJEÇÃO. DEPOIS QUE PERCEBE QUE O MUNDO QUE VOCÊ VÊ É A SUA PROJEÇÃO, VOCÊ ESTÁ LIVRE DELE.",
+      reflection: "Quando desconhecemos nossos filtros, podemos reagir às próprias interpretações como se fossem o mundo inteiro. Reconhecer uma projeção cria liberdade para verificar fatos, rever julgamentos e encontrar respostas novas.",
+      question: "Que julgamento sobre alguém pode estar refletindo um medo, desejo ou característica sua?",
+      writing: "Escreva o julgamento e investigue: o que ele desperta em mim, onde isso aparece na minha história e quais fatos realmente conheço sobre o outro?",
+      action: "Suspenda hoje um julgamento e observe a pessoa ou situação novamente com curiosidade.",
+      credit: "Elio D’Anna — crédito conforme o livro."
+    },
+
+    {
+      number: 50, page: 61, theme: "Vontade", title: "Ter a si mesmo",
+      original: "QUANDO A REAL VONTADE EMERGIR, VOCÊ NÃO PRECISARÁ MAIS DE MESTRES. QUANDO A REAL VONTADE FOR DESCOBERTA, VOCÊ TERÁ A SI MESMO. E TER A SI MESMO SIGNIFICA COMANDAR O UNIVERSO.",
+      reflection: "A vontade real nasce de uma compreensão interior que não depende continuamente de ordens externas. Ter a si mesmo é desenvolver direção, responsabilidade e confiança para conduzir escolhas sem abandonar a capacidade de aprender.",
+      question: "Qual decisão você já sabe que precisa tomar, mas ainda espera que alguém tome por você?",
+      writing: "Descreva a decisão, os conselhos recebidos e aquilo que sua própria consciência indica quando o ruído externo diminui.",
+      action: "Assuma hoje uma parte concreta dessa decisão e registre o compromisso consigo.",
+      credit: "Fernanda Freitas Martins — Simplesmente Ser."
     }
 
   ];
