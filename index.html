@@ -186,6 +186,36 @@
       font-size: 17px;
     }
 
+    .original-text,
+    .practice-box {
+      background: #fffdf9;
+      border-radius: 14px;
+      padding: 25px;
+      margin-top: 22px;
+      border: 1px solid #e4dbcf;
+    }
+
+    .original-text h3,
+    .practice-box h3 {
+      color: #8b6f47;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .original-text p,
+    .practice-box p {
+      font-size: 17px;
+      white-space: pre-line;
+    }
+
+    .credit {
+      margin-top: 14px;
+      color: #8d857b;
+      font-size: 13px;
+      font-style: italic;
+    }
+
     .question {
       margin-top: 22px;
     }
@@ -444,116 +474,144 @@
 
 <script>
 
-  /*
-   * ==========================================================
-   * CARTAS DE DEMONSTRAÇÃO
-   * ==========================================================
-   *
-   * Estas são apenas cartas de teste.
-   * Depois vamos substituir pelo conteúdo real das suas
-   * 172 reflexões.
-   */
+  /* PRIMEIRO LOTE DE CARTAS REAIS — LIVRO SIMPLESMENTE SER */
 
   const cards = [
 
     {
       number: 1,
-      theme: "Coragem",
-      title: "O que você faria hoje se o medo não pudesse decidir por você?",
-      reflection:
-        "Muitas vezes esperamos deixar de sentir medo para então agir. Talvez a coragem seja justamente reconhecer o medo e, ainda assim, dar um pequeno passo.",
-      action:
-        "Escolha uma pequena coisa que você vem adiando por medo e dê hoje o primeiro passo."
+      page: 12,
+      theme: "Valor pessoal",
+      title: "O valor que você pede à vida",
+      original: `Negociei com a vida por um mísero centavo, e ela não me deu mais — por mais que eu suplicasse nas noites solitárias, contando meus poucos bens.
+
+A vida é uma patroa justa: dá apenas o que pedimos, desde que tenhamos definido o preço antecipadamente.
+
+Trabalhei por uma miséria, apenas para descobrir, mais tarde, que qualquer valor que eu tivesse pedido à vida, ela teria pago com boa vontade.`,
+      reflection: "Muitas vezes recebemos da vida de acordo com o valor que acreditamos merecer e com aquilo que temos coragem de pedir, negociar e construir. Reconhecer o próprio valor não é arrogância: é deixar de aceitar automaticamente menos do que corresponde à nossa dedicação, capacidade e dignidade.",
+      question: "Em qual área da sua vida você tem aceitado menos do que realmente deseja ou merece?",
+      writing: "Escreva o que você verdadeiramente gostaria de pedir à vida nessa área. Depois descreva quais crenças, medos ou hábitos fizeram você diminuir esse pedido até agora.",
+      action: "Defina hoje um pedido ou limite concreto que expresse melhor o seu valor.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 2,
-      theme: "Limites",
-      title: "Onde você está dizendo sim quando gostaria de dizer não?",
-      reflection:
-        "Dizer sim para tudo pode parecer uma forma de agradar, mas também pode significar dizer não para as próprias necessidades.",
-      action:
-        "Identifique uma situação em que você precisa estabelecer um limite e pratique uma resposta mais verdadeira."
+      page: 13,
+      theme: "Autoconhecimento",
+      title: "Experimente a verdade",
+      original: "Não há caminho, autoridade, guru ou mestres a seguir. Você tem a capacidade de descobrir o que você é, o que está fazendo com sua vida, seus relacionamentos e seus trabalhos. Você precisa vivenciar o que este livro diz, a verdade de outra pessoa é apenas uma opinião, até que nós mesmos a experimentemos. Olhe você mesmo pelo microscópio ou ficará com uma poeira de palavras e não com a REAL percepção da Vida!",
+      reflection: "Conselhos podem indicar caminhos, mas o autoconhecimento nasce quando observamos diretamente nossos pensamentos, escolhas e relações. Uma ideia só se transforma em sabedoria pessoal quando é testada na experiência e compreendida por dentro.",
+      question: "Que verdade você tem repetido porque ouviu de alguém, mas ainda não comprovou em sua própria experiência?",
+      writing: "Escolha uma crença importante sobre você ou sobre a vida. Escreva de onde ela veio, quais experiências parecem confirmá-la e quais experiências a contradizem.",
+      action: "Observe essa crença durante o dia e registre um exemplo real, sem tentar provar que ela está certa ou errada.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 3,
-      theme: "Amor-próprio",
-      title: "Como você tem tratado a pessoa que mais precisa da sua compreensão: você?",
-      reflection:
-        "Talvez você seja muito compreensivo com os outros e extremamente exigente consigo. Observe a maneira como conversa consigo mesmo.",
-      action:
-        "Hoje, substitua uma crítica interna por uma frase que você diria a alguém que ama."
+      page: 14,
+      theme: "Fé e objetivo",
+      title: "Pensar através do objetivo",
+      original: `PENSE ATRAVÉS DO OBJETIVO
+
+“TUDO O QUE PEDIRES, CRENDO QUE RECEBEU, RECEBERÁS.”`,
+      reflection: "Pensar através do objetivo é imaginar, sentir e agir a partir da realidade que desejamos construir. A fé não substitui a ação; ela dá direção, significado e perseverança aos passos que escolhemos dar.",
+      question: "Se você acreditasse profundamente que seu objetivo é possível, o que faria de maneira diferente hoje?",
+      writing: "Descreva um objetivo como se ele já estivesse realizado. Explique como você pensa, sente, organiza o tempo e toma decisões nessa nova realidade.",
+      action: "Realize hoje uma ação pequena e verificável coerente com esse objetivo.",
+      credit: "Jesus — crédito conforme o livro."
     },
 
     {
       number: 4,
-      theme: "Mudança",
-      title: "O que você sabe que precisa mudar, mas continua adiando?",
-      reflection:
-        "Sabemos muitas vezes o que precisa mudar, mas o conhecido pode parecer mais seguro do que o novo.",
-      action:
-        "Faça hoje uma pequena mudança relacionada àquilo que você vem adiando."
+      page: 15,
+      theme: "Evolução interior",
+      title: "A mina de ouro interior",
+      original: "EVOLUÇÃO É UMA ATIVIDADE SIMILAR AO TRABALHO EM UMA MINA DE OURO, ALÉM DE MUITO ÚTIL ESTE CRESCIMENTO INTERIOR É TAMBÉM VIBRANTE, INTERESSANTE E DIVERTIDO, E UMA VEZ QUE SE INICIA É UMA AVENTURA TÃO EXCITANTE QUE VOCÊ IRÁ DE BOA VONTADE ALOCAR MAIS DO SEU TEMPO E ENERGIA NESTA DIREÇÃO.",
+      reflection: "O crescimento interior exige dedicação, mas também pode ser uma descoberta fascinante. Cada crença compreendida, cada padrão transformado e cada qualidade desenvolvida revela algo valioso que já estava dentro de nós.",
+      question: "Qual parte de você está pedindo mais atenção e desenvolvimento neste momento?",
+      writing: "Escreva sobre uma qualidade interior que deseja fortalecer. Por que ela é importante e como sua vida poderá mudar quando você a desenvolver?",
+      action: "Reserve dez minutos para uma prática de crescimento interior: escrever, meditar, estudar ou ter uma conversa consciente.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 5,
-      theme: "Presença",
-      title: "Quanto da sua vida você está realmente vivendo no momento presente?",
-      reflection:
-        "Quando estamos presos ao passado ou preocupados com o futuro, podemos deixar de perceber o que está acontecendo agora.",
-      action:
-        "Durante alguns minutos hoje, deixe o celular de lado e esteja completamente presente no que estiver fazendo."
+      page: 16,
+      theme: "Leveza",
+      title: "Leveza e alegria",
+      original: "TUDO VEM A MIM COM LEVEZA E ALEGRIA",
+      reflection: "Leveza não significa ausência de desafios. Significa aprender a atravessá-los sem transformar cada dificuldade em um peso permanente, abrindo espaço para confiança, flexibilidade e alegria.",
+      question: "O que você está tornando mais pesado do que realmente precisa ser?",
+      writing: "Descreva uma situação que tem consumido sua energia. Depois escreva como poderia enfrentá-la com mais simplicidade e leveza.",
+      action: "Escolha uma preocupação e faça apenas o próximo passo possível, sem tentar resolver tudo de uma vez.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 6,
-      theme: "Escolhas",
-      title: "Essa vida que você está vivendo ainda combina com quem você está se tornando?",
-      reflection:
-        "Nós mudamos. Nossos desejos, prioridades e necessidades também podem mudar. Algumas escolhas antigas podem não representar mais quem somos.",
-      action:
-        "Escolha uma área da sua vida e pergunte: o que eu escolheria hoje?"
+      page: 17,
+      theme: "Integridade",
+      title: "Ser íntegro",
+      original: "SER ÍNTEGRO É MELHOR QUE SER BOM",
+      reflection: "Ser bom pode significar tentar corresponder às expectativas externas. Ser íntegro significa permanecer alinhado com a própria consciência, inclusive quando dizer a verdade, estabelecer um limite ou reconhecer um erro não agrada aos outros.",
+      question: "Você está tentando parecer bom para alguém enquanto deixa de ser honesto consigo?",
+      writing: "Escreva duas frases: ‘Para parecer bom, eu tenho...’ e ‘Para ser íntegro, eu preciso...’. Observe a diferença entre as respostas.",
+      action: "Pratique hoje uma atitude honesta e respeitosa que esteja alinhada com seus valores.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 7,
-      theme: "Relacionamentos",
-      title: "Você está sendo você mesmo ou está tentando ser quem alguém espera que você seja?",
-      reflection:
-        "Quando vivemos buscando aprovação, podemos nos afastar pouco a pouco daquilo que realmente sentimos e queremos.",
-      action:
-        "Hoje, observe uma situação em que você costuma tentar agradar e escolha agir com mais autenticidade."
+      page: 18,
+      theme: "Integridade",
+      title: "Um ser não fragmentado",
+      original: "ÍNTEGRO\nUM SER HUMANO NÃO FRAGMENTADO...\nÉ AQUELE QUE PERMANECE ILESO DIANTE DO CAOS, HONESTO CONSIGO, MESMO QUANDO O MUNDO PEDE MÁSCARAS, INCORRUPTÍVEL, MESMO DIANTE DA SEDUÇÃO DO EGO, PURO, PORQUE ESCOLHEU A VERDADE, INOCENTE, PORQUE JÁ VIU A ESCURIDÃO E MESMO ASSIM ESCOLHEU A LUZ.",
+      reflection: "Integridade é reunir as partes de nós que costumamos separar: o que pensamos, sentimos, dizemos e fazemos. Não significa perfeição, mas compromisso com a verdade e capacidade de escolher conscientemente mesmo em meio ao caos.",
+      question: "Em que situação você sente que precisa usar uma máscara para ser aceito?",
+      writing: "Descreva a máscara, o que ela tenta proteger e o que você gostaria de expressar com mais autenticidade.",
+      action: "Em uma interação segura hoje, permita-se expressar uma opinião, necessidade ou sentimento verdadeiro com respeito.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 8,
-      theme: "Perdão",
-      title: "O que você continua carregando que já poderia começar a deixar para trás?",
-      reflection:
-        "Perdoar não significa necessariamente esquecer ou concordar. Às vezes significa escolher não continuar carregando aquilo todos os dias.",
-      action:
-        "Escreva o que você gostaria de começar a deixar para trás."
+      page: 19,
+      theme: "Autodomínio",
+      title: "A verdadeira vitória",
+      original: "ANTES DE CONQUISTAR O MUNDO, CONQUISTE A SI MESMO.\n\nANTES DE VENCER LÁ FORA, VENÇA AQUI DENTRO.\n\nNÃO SAIA DO SEU QUARTO, DA SUA CASA, DA SUA VIDA... SEM ANTES OLHAR NOS SEUS PRÓPRIOS OLHOS E DIZER:\n\n— ‘HOJE, EU SEREI FIEL A MIM.’\n\nESSE É O SUCESSO REAL. ESSA É A VERDADEIRA VITÓRIA.\n\nVOCÊ É O CAMPO DE BATALHA. E É A VITÓRIA.",
+      reflection: "Conquistas externas perdem sentido quando exigem que abandonemos a nós mesmos. A vitória interior começa ao reconhecer os próprios impulsos, medos e valores e escolher ações que não traiam quem desejamos ser.",
+      question: "O que significaria ser fiel a você mesmo hoje?",
+      writing: "Escreva uma promessa simples para este dia. Ela deve depender de você e representar uma escolha coerente com seus valores.",
+      action: "Leia sua promessa em voz alta e cumpra-a antes de dormir.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 9,
-      theme: "Autoescuta",
-      title: "Se você realmente escutasse o que sente, o que descobriria?",
-      reflection:
-        "Nem sempre damos espaço para ouvir nossas próprias emoções. Parar pode revelar necessidades que estavam sendo ignoradas.",
-      action:
-        "Reserve dez minutos hoje para escrever sem censura sobre o que você realmente está sentindo."
+      page: 20,
+      theme: "Desapego",
+      title: "O que permanece",
+      original: "NINGUÉM PERDE O QUE NÃO TEM E, NA VERDADE, NÃO POSSUÍMOS NADA. APENAS A NOSSA ESSÊNCIA — O SER — PERMANECE.",
+      reflection: "Pessoas, objetos, posições e fases da vida mudam. O desapego não exige indiferença; ele nos convida a amar e participar sem construir toda a nossa identidade sobre aquilo que pode mudar ou partir.",
+      question: "Se algo externo mudasse hoje, qual parte de você ainda permaneceria?",
+      writing: "Liste cinco características, valores ou capacidades que fazem parte da sua essência e não dependem de posses, títulos ou aprovação.",
+      action: "Escolha um item da lista e demonstre essa qualidade em uma ação concreta.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     },
 
     {
       number: 10,
-      theme: "Ação",
-      title: "Qual é a menor atitude que você pode tomar hoje para se aproximar da vida que deseja?",
-      reflection:
-        "Grandes mudanças normalmente começam com pequenas decisões repetidas. Você não precisa resolver tudo hoje.",
-      action:
-        "Escolha uma ação pequena, concreta e possível. Faça antes do final do dia."
+      page: 21,
+      theme: "Desapego e consciência",
+      title: "O infinito que nos habita",
+      original: "DO VAZIO QUE A ALMA CRIA AO SE LIBERTAR DOS VÍNCULOS COM OBJETOS EXTERNOS E DESEJOS CARNAIS,\n\nNASCE UM ESTADO DE SER PURO, PLENO E CONSCIENTE, LIVRE DE QUALQUER ILUSÃO DE QUE EXISTA ALGO FORA DE SI MESMO.\n\nESSE ESTADO É UM MOVIMENTO NATURAL, CONTÍNUO, EM DIREÇÃO À ETERNIDADE, À IMORTALIDADE E AO INFINITO QUE NOS HABITA.",
+      reflection: "Quando diminuímos a dependência de estímulos e validações externas, podemos perceber um espaço interior mais silencioso e consciente. Esse vazio não precisa ser ausência; pode se tornar presença, liberdade e encontro consigo.",
+      question: "O que você busca fora de si para evitar sentir ou escutar o que existe dentro?",
+      writing: "Escreva sobre um desejo externo recorrente. Que sensação você espera obter quando ele for satisfeito? De que maneira pode cultivar uma parte dessa sensação internamente?",
+      action: "Passe dez minutos sem celular, música ou distrações. Apenas observe sua respiração, pensamentos e sensações.",
+      credit: "Autoria não informada no livro — em revisão editorial."
     }
 
   ];
@@ -685,70 +743,49 @@
       </div>
 
 
+      <div class="original-text">
+        <h3>TEXTO ORIGINAL — PÁGINA ${card.page}</h3>
+        <p>${card.original}</p>
+        <div class="credit">${card.credit}</div>
+      </div>
+
       <div class="reflection">
-
-        <h3>REFLITA</h3>
-
-        <p>
-          ${card.reflection}
-        </p>
-
+        <h3>REFLEXÃO PRÁTICA</h3>
+        <p>${card.reflection}</p>
       </div>
 
-
       <div class="question">
-
-        <label>
-          O que eu entendi?
-        </label>
-
+        <label>${card.question}</label>
         <textarea
-          id="understanding"
-          placeholder="Escreva aqui o que essa reflexão despertou em você..."
+          id="questionAnswer"
+          placeholder="Escreva aqui o que essa pergunta despertou em você..."
         ></textarea>
-
       </div>
 
+      <div class="practice-box">
+        <h3>EXERCÍCIO DE ESCRITA</h3>
+        <p>${card.writing}</p>
+      </div>
 
       <div class="question">
-
-        <label>
-          Onde isso aparece na minha vida?
-        </label>
-
+        <label>Minha escrita</label>
         <textarea
-          id="lifeConnection"
-          placeholder="Existe alguma situação na sua vida relacionada a isso?"
+          id="writing"
+          placeholder="Escreva livremente, sem buscar uma resposta perfeita..."
         ></textarea>
-
       </div>
 
-
-      <div class="question">
-
-        <label>
-          Como posso praticar isso hoje?
-        </label>
-
-        <textarea
-          id="practice"
-          placeholder="Que atitude posso experimentar hoje?"
-        ></textarea>
-
+      <div class="practice-box">
+        <h3>AÇÃO DO DIA</h3>
+        <p>${card.action}</p>
       </div>
 
-
       <div class="question">
-
-        <label>
-          Minha ação de hoje
-        </label>
-
+        <label>Como vou colocar essa ação em prática?</label>
         <textarea
           id="action"
-          placeholder="${card.action}"
+          placeholder="Registre seu compromisso para hoje..."
         ></textarea>
-
       </div>
 
 
@@ -783,23 +820,19 @@
       return;
     }
 
-    const understanding =
-      document.getElementById("understanding").value;
+    const questionAnswer =
+      document.getElementById("questionAnswer").value;
 
-    const lifeConnection =
-      document.getElementById("lifeConnection").value;
-
-    const practice =
-      document.getElementById("practice").value;
+    const writing =
+      document.getElementById("writing").value;
 
     const action =
       document.getElementById("action").value;
 
 
     if (
-      !understanding.trim() &&
-      !lifeConnection.trim() &&
-      !practice.trim() &&
+      !questionAnswer.trim() &&
+      !writing.trim() &&
       !action.trim()
     ) {
 
@@ -836,11 +869,15 @@
 
       title: currentCard.title,
 
-      understanding,
+      question: currentCard.question,
 
-      lifeConnection,
+      writingPrompt: currentCard.writing,
 
-      practice,
+      actionPrompt: currentCard.action,
+
+      questionAnswer,
+
+      writing,
 
       action
 
@@ -940,15 +977,15 @@
 
 
         ${
-          entry.understanding
+          entry.questionAnswer || entry.understanding
           ?
           `
           <div class="journal-label">
-            O que eu entendi?
+            ${entry.question || "O que eu entendi?"}
           </div>
 
           <p>
-            ${escapeHTML(entry.understanding)}
+            ${escapeHTML(entry.questionAnswer || entry.understanding)}
           </p>
           `
           : ""
@@ -956,15 +993,15 @@
 
 
         ${
-          entry.lifeConnection
+          entry.writing || entry.lifeConnection
           ?
           `
           <div class="journal-label">
-            Onde isso aparece na minha vida?
+            ${entry.writingPrompt || "Minha escrita"}
           </div>
 
           <p>
-            ${escapeHTML(entry.lifeConnection)}
+            ${escapeHTML(entry.writing || entry.lifeConnection)}
           </p>
           `
           : ""
@@ -976,7 +1013,7 @@
           ?
           `
           <div class="journal-label">
-            Como posso praticar isso hoje?
+            Como posso praticar isso hoje? (registro anterior)
           </div>
 
           <p>
@@ -992,7 +1029,7 @@
           ?
           `
           <div class="journal-label">
-            Minha ação
+            ${entry.actionPrompt || "Minha ação"}
           </div>
 
           <p>
