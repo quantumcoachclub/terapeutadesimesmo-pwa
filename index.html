@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8b6f47">
+  <meta name="description" content="Autoconhecimento na Prática — uma reflexão só transforma quando vira ação.">
+
+  <title>Autoconhecimento na Prática</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background: #f7f3ed;
+      color: #3f3a34;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #8b6f47;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 15px;
+      opacity: 0.95;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      background: white;
+      border-bottom: 1px solid #e5ddd2;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav button {
+      background: transparent;
+      border: none;
+      padding: 9px 12px;
+      color: #65543e;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    nav button:hover {
+      background: #f1ebe2;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 30px 18px 60px;
+    }
+
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .intro h2 {
+      font-size: 30px;
+      font-weight: normal;
+      margin-bottom: 14px;
+    }
+
+    .intro p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 28px;
+    }
+
+    .main-button {
+      background: #8b6f47;
+      color: white;
+      border: none;
+      padding: 15px 28px;
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 17px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    }
+
+    .main-button:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .secondary-button {
+      background: white;
+      color: #765e3d;
+      border: 1px solid #cdbfae;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-family: inherit;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .card-container {
+      perspective: 1000px;
+      margin: 25px auto;
+      max-width: 430px;
+    }
+
+    .card {
+      background: #fffdf9;
+      border: 1px solid #d9cdbd;
+      border-radius: 18px;
+      padding: 38px 28px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(74, 58, 40, 0.12);
+    }
+
+    .card-number {
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #9a7950;
+      margin-bottom: 18px;
+    }
+
+    .card-theme {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #8b6f47;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 25px;
+      font-weight: normal;
+      line-height: 1.35;
+    }
+
+    .reflection {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      margin-top: 25px;
+      border: 1px solid #e4dbcf;
+    }
+
+    .reflection h3 {
+      color: #8b6f47;
+      font-size: 15px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .reflection p {
+      font-size: 17px;
+    }
+
+    .question {
+      margin-top: 22px;
+    }
+
+    .question label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 105px;
+      padding: 13px;
+      border: 1px solid #d5c8b8;
+      border-radius: 10px;
+      background: #fffdf9;
+      font-family: inherit;
+      font-size: 16px;
+      resize: vertical;
+      color: #3f3a34;
+    }
+
+    textarea:focus {
+      outline: 2px solid #cdbb9f;
+      border-color: #8b6f47;
+    }
+
+    .save-area {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .message {
+      text-align: center;
+      margin: 15px 0;
+      padding: 12px;
+      border-radius: 10px;
+      background: #eee7dc;
+      display: none;
+    }
+
+    .journal-entry {
+      background: white;
+      border: 1px solid #e4dbcf;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .journal-entry h3 {
+      font-size: 18px;
+      font-weight: normal;
+      color: #765e3d;
+      margin-bottom: 5px;
+    }
+
+    .journal-date {
+      font-size: 13px;
+      color: #8d857b;
+      margin-bottom: 14px;
+    }
+
+    .journal-label {
+      font-weight: bold;
+      margin-top: 12px;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 40px 20px;
+      color: #777066;
+    }
+
+    .about {
+      background: white;
+      padding: 28px;
+      border-radius: 15px;
+      border: 1px solid #e4dbcf;
+    }
+
+    .about h2 {
+      font-weight: normal;
+      color: #765e3d;
+      margin-bottom: 18px;
+    }
+
+    .about p {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8a8176;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 23px;
+      }
+
+      nav {
+        overflow-x: auto;
+        justify-content: flex-start;
+      }
+
+      nav button {
+        white-space: nowrap;
+      }
+
+      .intro h2 {
+        font-size: 26px;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+
+      .card h3 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Autoconhecimento na Prática</h1>
+  <p>Uma reflexão só transforma quando vira ação.</p>
+</header>
+
+<nav>
+  <button onclick="showSection('inicio')">Início</button>
+  <button onclick="showSection('carta')">🃏 Carta</button>
+  <button onclick="showSection('diario')">📖 Diário</button>
+  <button onclick="showSection('sobre')">Sobre</button>
+</nav>
+
+<main>
+
+  <!-- INÍCIO -->
+  <section id="inicio" class="section active">
+
+    <div class="intro">
+      <h2>Um momento para você.</h2>
+
+      <p>
+        Abra uma carta. Leia. Reflita. Escreva.
+        E escolha uma pequena ação para colocar em prática hoje.
+      </p>
+
+      <button class="main-button" onclick="drawCard()">
+        🃏 TIRAR UMA CARTA
+      </button>
+
+      <br><br>
+
+      <button class="secondary-button" onclick="dailyCard()">
+        🌱 Carta do Dia
+      </button>
+    </div>
+
+  </section>
+
+
+  <!-- CARTA -->
+  <section id="carta" class="section">
+
+    <div id="cardArea">
+
+      <div class="intro">
+        <h2>Sua carta</h2>
+
+        <p>
+          Não procure a resposta perfeita.
+          Observe o que essa pergunta desperta em você.
+        </p>
+
+        <button class="main-button" onclick="drawCard()">
+          🃏 TIRAR UMA CARTA
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DIÁRIO -->
+  <section id="diario" class="section">
+
+    <div class="intro">
+      <h2>Meu Diário</h2>
+
+      <p>
+        Aqui ficam registradas as reflexões que você decidiu guardar.
+      </p>
+    </div>
+
+    <div id="journalList"></div>
+
+  </section>
+
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section">
+
+    <div class="about">
+
+      <h2>Autoconhecimento na Prática</h2>
+
+      <p>
+        Este espaço nasceu da ideia de que refletir é apenas o começo.
+      </p>
+
+      <p>
+        O verdadeiro movimento acontece quando aquilo que percebemos
+        dentro de nós encontra uma pequena ação na vida real.
+      </p>
+
+      <p>
+        Leia. Reflita. Escreva. Pratique. Aja.
+      </p>
+
+      <hr style="margin:25px 0; border:none; border-top:1px solid #e4dbcf;">
+
+      <p>
+        <strong>Livro</strong>
+      </p>
+
+      <p>
+        Esta jornada também continua nas 172 páginas de reflexão
+        do livro.
+      </p>
+
+      <button class="secondary-button" onclick="alert('Aqui colocaremos o link para comprar o livro.')">
+        Conheça o livro
+      </button>
+
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Autoconhecimento na Prática © 2026
+</footer>
+
+
+<script>
+
+  /*
+   * ==========================================================
+   * CARTAS DE DEMONSTRAÇÃO
+   * ==========================================================
+   *
+   * Estas são apenas cartas de teste.
+   * Depois vamos substituir pelo conteúdo real das suas
+   * 172 reflexões.
+   */
+
+  const cards = [
+
+    {
+      number: 1,
+      theme: "Coragem",
+      title: "O que você faria hoje se o medo não pudesse decidir por você?",
+      reflection:
+        "Muitas vezes esperamos deixar de sentir medo para então agir. Talvez a coragem seja justamente reconhecer o medo e, ainda assim, dar um pequeno passo.",
+      action:
+        "Escolha uma pequena coisa que você vem adiando por medo e dê hoje o primeiro passo."
+    },
+
+    {
+      number: 2,
+      theme: "Limites",
+      title: "Onde você está dizendo sim quando gostaria de dizer não?",
+      reflection:
+        "Dizer sim para tudo pode parecer uma forma de agradar, mas também pode significar dizer não para as próprias necessidades.",
+      action:
+        "Identifique uma situação em que você precisa estabelecer um limite e pratique uma resposta mais verdadeira."
+    },
+
+    {
+      number: 3,
+      theme: "Amor-próprio",
+      title: "Como você tem tratado a pessoa que mais precisa da sua compreensão: você?",
+      reflection:
+        "Talvez você seja muito compreensivo com os outros e extremamente exigente consigo. Observe a maneira como conversa consigo mesmo.",
+      action:
+        "Hoje, substitua uma crítica interna por uma frase que você diria a alguém que ama."
+    },
+
+    {
+      number: 4,
+      theme: "Mudança",
+      title: "O que você sabe que precisa mudar, mas continua adiando?",
+      reflection:
+        "Sabemos muitas vezes o que precisa mudar, mas o conhecido pode parecer mais seguro do que o novo.",
+      action:
+        "Faça hoje uma pequena mudança relacionada àquilo que você vem adiando."
+    },
+
+    {
+      number: 5,
+      theme: "Presença",
+      title: "Quanto da sua vida você está realmente vivendo no momento presente?",
+      reflection:
+        "Quando estamos presos ao passado ou preocupados com o futuro, podemos deixar de perceber o que está acontecendo agora.",
+      action:
+        "Durante alguns minutos hoje, deixe o celular de lado e esteja completamente presente no que estiver fazendo."
+    },
+
+    {
+      number: 6,
+      theme: "Escolhas",
+      title: "Essa vida que você está vivendo ainda combina com quem você está se tornando?",
+      reflection:
+        "Nós mudamos. Nossos desejos, prioridades e necessidades também podem mudar. Algumas escolhas antigas podem não representar mais quem somos.",
+      action:
+        "Escolha uma área da sua vida e pergunte: o que eu escolheria hoje?"
+    },
+
+    {
+      number: 7,
+      theme: "Relacionamentos",
+      title: "Você está sendo você mesmo ou está tentando ser quem alguém espera que você seja?",
+      reflection:
+        "Quando vivemos buscando aprovação, podemos nos afastar pouco a pouco daquilo que realmente sentimos e queremos.",
+      action:
+        "Hoje, observe uma situação em que você costuma tentar agradar e escolha agir com mais autenticidade."
+    },
+
+    {
+      number: 8,
+      theme: "Perdão",
+      title: "O que você continua carregando que já poderia começar a deixar para trás?",
+      reflection:
+        "Perdoar não significa necessariamente esquecer ou concordar. Às vezes significa escolher não continuar carregando aquilo todos os dias.",
+      action:
+        "Escreva o que você gostaria de começar a deixar para trás."
+    },
+
+    {
+      number: 9,
+      theme: "Autoescuta",
+      title: "Se você realmente escutasse o que sente, o que descobriria?",
+      reflection:
+        "Nem sempre damos espaço para ouvir nossas próprias emoções. Parar pode revelar necessidades que estavam sendo ignoradas.",
+      action:
+        "Reserve dez minutos hoje para escrever sem censura sobre o que você realmente está sentindo."
+    },
+
+    {
+      number: 10,
+      theme: "Ação",
+      title: "Qual é a menor atitude que você pode tomar hoje para se aproximar da vida que deseja?",
+      reflection:
+        "Grandes mudanças normalmente começam com pequenas decisões repetidas. Você não precisa resolver tudo hoje.",
+      action:
+        "Escolha uma ação pequena, concreta e possível. Faça antes do final do dia."
+    }
+
+  ];
+
+
+  let currentCard = null;
+
+
+  // ==========================================================
+  // NAVEGAÇÃO
+  // ==========================================================
+
+  function showSection(sectionId) {
+
+    const sections = document.querySelectorAll(".section");
+
+    sections.forEach(section => {
+      section.classList.remove("active");
+    });
+
+    document.getElementById(sectionId).classList.add("active");
+
+    if (sectionId === "diario") {
+      loadJournal();
+    }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
+
+  // ==========================================================
+  // TIRAR CARTA
+  // ==========================================================
+
+  function drawCard() {
+
+    let newCard;
+
+    do {
+      newCard = cards[Math.floor(Math.random() * cards.length)];
+    } while (
+      currentCard &&
+      cards.length > 1 &&
+      newCard.number === currentCard.number
+    );
+
+    currentCard = newCard;
+
+    showSection("carta");
+
+    displayCard(currentCard);
+  }
+
+
+  // ==========================================================
+  // CARTA DO DIA
+  // ==========================================================
+
+  function dailyCard() {
+
+    const today = new Date().toISOString().split("T")[0];
+
+    const savedDaily = JSON.parse(
+      localStorage.getItem("dailyCard")
+    );
+
+    let card;
+
+    if (savedDaily && savedDaily.date === today) {
+
+      card = cards.find(
+        c => c.number === savedDaily.cardNumber
+      );
+
+    } else {
+
+      card = cards[
+        Math.floor(Math.random() * cards.length)
+      ];
+
+      localStorage.setItem(
+        "dailyCard",
+        JSON.stringify({
+          date: today,
+          cardNumber: card.number
+        })
+      );
+    }
+
+    currentCard = card;
+
+    showSection("carta");
+
+    displayCard(card);
+  }
+
+
+  // ==========================================================
+  // MOSTRAR CARTA
+  // ==========================================================
+
+  function displayCard(card) {
+
+    const area = document.getElementById("cardArea");
+
+    area.innerHTML = `
+
+      <div class="card-container">
+
+        <div class="card">
+
+          <div class="card-number">
+            CARTA ${String(card.number).padStart(3, "0")}
+          </div>
+
+          <div class="card-theme">
+            ${card.theme}
+          </div>
+
+          <h3>
+            ${card.title}
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="reflection">
+
+        <h3>REFLITA</h3>
+
+        <p>
+          ${card.reflection}
+        </p>
+
+      </div>
+
+
+      <div class="question">
+
+        <label>
+          O que eu entendi?
+        </label>
+
+        <textarea
+          id="understanding"
+          placeholder="Escreva aqui o que essa reflexão despertou em você..."
+        ></textarea>
+
+      </div>
+
+
+      <div class="question">
+
+        <label>
+          Onde isso aparece na minha vida?
+        </label>
+
+        <textarea
+          id="lifeConnection"
+          placeholder="Existe alguma situação na sua vida relacionada a isso?"
+        ></textarea>
+
+      </div>
+
+
+      <div class="question">
+
+        <label>
+          Como posso praticar isso hoje?
+        </label>
+
+        <textarea
+          id="practice"
+          placeholder="Que atitude posso experimentar hoje?"
+        ></textarea>
+
+      </div>
+
+
+      <div class="question">
+
+        <label>
+          Minha ação de hoje
+        </label>
+
+        <textarea
+          id="action"
+          placeholder="${card.action}"
+        ></textarea>
+
+      </div>
+
+
+      <div class="save-area">
+
+        <button
+          class="main-button"
+          onclick="saveEntry()"
+        >
+          💾 SALVAR MINHA REFLEXÃO
+        </button>
+
+        <div
+          id="saveMessage"
+          class="message"
+        >
+        </div>
+
+      </div>
+
+    `;
+  }
+
+
+  // ==========================================================
+  // SALVAR NO DIÁRIO
+  // ==========================================================
+
+  function saveEntry() {
+
+    if (!currentCard) {
+      return;
+    }
+
+    const understanding =
+      document.getElementById("understanding").value;
+
+    const lifeConnection =
+      document.getElementById("lifeConnection").value;
+
+    const practice =
+      document.getElementById("practice").value;
+
+    const action =
+      document.getElementById("action").value;
+
+
+    if (
+      !understanding.trim() &&
+      !lifeConnection.trim() &&
+      !practice.trim() &&
+      !action.trim()
+    ) {
+
+      alert(
+        "Escreva pelo menos uma reflexão antes de salvar."
+      );
+
+      return;
+    }
+
+
+    const entries =
+      JSON.parse(
+        localStorage.getItem("journalEntries")
+      ) || [];
+
+
+    const entry = {
+
+      id: Date.now(),
+
+      date:
+        new Date().toLocaleString(
+          "pt-BR",
+          {
+            dateStyle: "short",
+            timeStyle: "short"
+          }
+        ),
+
+      cardNumber: currentCard.number,
+
+      theme: currentCard.theme,
+
+      title: currentCard.title,
+
+      understanding,
+
+      lifeConnection,
+
+      practice,
+
+      action
+
+    };
+
+
+    entries.unshift(entry);
+
+
+    localStorage.setItem(
+      "journalEntries",
+      JSON.stringify(entries)
+    );
+
+
+    const message =
+      document.getElementById("saveMessage");
+
+
+    message.innerText =
+      "Sua reflexão foi salva no seu diário. 🌱";
+
+
+    message.style.display = "block";
+
+
+    setTimeout(() => {
+
+      message.style.display = "none";
+
+    }, 4000);
+
+  }
+
+
+  // ==========================================================
+  // CARREGAR DIÁRIO
+  // ==========================================================
+
+  function loadJournal() {
+
+    const list =
+      document.getElementById("journalList");
+
+
+    const entries =
+      JSON.parse(
+        localStorage.getItem("journalEntries")
+      ) || [];
+
+
+    if (entries.length === 0) {
+
+      list.innerHTML = `
+
+        <div class="empty">
+
+          <h3>Seu diário ainda está vazio.</h3>
+
+          <p>
+            Tire uma carta e comece sua primeira reflexão.
+          </p>
+
+          <br>
+
+          <button
+            class="main-button"
+            onclick="drawCard()"
+          >
+            🃏 TIRAR UMA CARTA
+          </button>
+
+        </div>
+
+      `;
+
+      return;
+    }
+
+
+    list.innerHTML = entries.map(entry => `
+
+      <div class="journal-entry">
+
+        <h3>
+          Carta ${String(entry.cardNumber).padStart(3, "0")}
+          — ${entry.theme}
+        </h3>
+
+        <div class="journal-date">
+          ${entry.date}
+        </div>
+
+        <p>
+          <strong>${entry.title}</strong>
+        </p>
+
+
+        ${
+          entry.understanding
+          ?
+          `
+          <div class="journal-label">
+            O que eu entendi?
+          </div>
+
+          <p>
+            ${escapeHTML(entry.understanding)}
+          </p>
+          `
+          : ""
+        }
+
+
+        ${
+          entry.lifeConnection
+          ?
+          `
+          <div class="journal-label">
+            Onde isso aparece na minha vida?
+          </div>
+
+          <p>
+            ${escapeHTML(entry.lifeConnection)}
+          </p>
+          `
+          : ""
+        }
+
+
+        ${
+          entry.practice
+          ?
+          `
+          <div class="journal-label">
+            Como posso praticar isso hoje?
+          </div>
+
+          <p>
+            ${escapeHTML(entry.practice)}
+          </p>
+          `
+          : ""
+        }
+
+
+        ${
+          entry.action
+          ?
+          `
+          <div class="journal-label">
+            Minha ação
+          </div>
+
+          <p>
+            ${escapeHTML(entry.action)}
+          </p>
+          `
+          : ""
+        }
+
+
+        <br>
+
+        <button
+          class="secondary-button"
+          onclick="deleteEntry(${entry.id})"
+        >
+          Excluir
+        </button>
+
+      </div>
+
+    `).join("");
+
+  }
+
+
+  // ==========================================================
+  // EXCLUIR ENTRADA
+  // ==========================================================
+
+  function deleteEntry(id) {
+
+    if (
+      !confirm(
+        "Tem certeza que deseja excluir esta reflexão?"
+      )
+    ) {
+      return;
+    }
+
+
+    let entries =
+      JSON.parse(
+        localStorage.getItem("journalEntries")
+      ) || [];
+
+
+    entries =
+      entries.filter(
+        entry => entry.id !== id
+      );
+
+
+    localStorage.setItem(
+      "journalEntries",
+      JSON.stringify(entries)
+    );
+
+
+    loadJournal();
+
+  }
+
+
+  // ==========================================================
+  // SEGURANÇA PARA TEXTO DIGITADO PELO USUÁRIO
+  // ==========================================================
+
+  function escapeHTML(text) {
+
+    const div =
+      document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+  }
+
+
+  // ==========================================================
+  // INICIALIZAÇÃO
+  // ==========================================================
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+      loadJournal();
+
+    }
+  );
+
+</script>
+
+</body>
+</html>
