@@ -556,6 +556,36 @@
     }
 
 
+    nav button {
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.055em;
+    }
+
+    .draw-star {
+      display: inline-block;
+      margin-right: 5px;
+      color: #ffe7a6;
+      font-size: 1.25em;
+      line-height: 0;
+      transform-origin: 50% 50%;
+      text-shadow: 0 0 5px #ffffff, 0 0 10px #d9a9bd, 0 0 17px #833c58;
+      animation: draw-star-spin 2.4s linear infinite, draw-star-glow 1.25s ease-in-out infinite alternate;
+    }
+
+    @keyframes draw-star-spin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes draw-star-glow {
+      from { opacity: 0.78; filter: brightness(0.92); }
+      to { opacity: 1; filter: brightness(1.42); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .draw-star { animation: none; }
+    }
+
     .language-switcher {
       display: flex;
       justify-content: center;
@@ -880,7 +910,7 @@
       <h3 class="challenge-question">Você aceita o desafio?</h3>
 
       <button class="main-button" onclick="drawCard()">
-        🃏 TIRAR MINHA CARTA
+        <span class="draw-star" aria-hidden="true">✦</span> TIRAR MINHA CARTA
       </button>
 
       <br><br>
@@ -907,7 +937,7 @@
         </p>
 
         <button class="main-button" onclick="drawCard()">
-          🃏 TIRAR UMA CARTA
+          <span class="draw-star" aria-hidden="true">✦</span> TIRAR UMA CARTA
         </button>
       </div>
 
@@ -992,7 +1022,7 @@
       </div>
 
       <div style="text-align:center; margin-top:26px;">
-        <button class="main-button" onclick="drawCard()">🃏 TIRAR MINHA CARTA</button>
+        <button class="main-button" onclick="drawCard()"><span class="draw-star" aria-hidden="true">✦</span> TIRAR MINHA CARTA</button>
       </div>
 
     </div>
@@ -5004,7 +5034,7 @@
 
   const ui = {
     pt: {
-      nav: ["Início", "🃏 Carta", "📖 Diário", "Como Usar", "Sobre", "✍️ Autora"],
+      nav: ["INÍCIO", "🃏 CARTA", "📖 DIÁRIO", "COMO USAR", "SOBRE", "✍️ AUTORA"],
       language: "Idioma",
       card: "CARTA",
       original: "TEXTO ORIGINAL — PÁGINA",
@@ -5035,7 +5065,7 @@
       saved: "Sua reflexão foi salva no seu diário. 🌱",
       journalEmptyTitle: "Seu diário ainda está vazio.",
       journalEmptyText: "Tire uma carta e comece sua primeira reflexão.",
-      draw: "🃏 TIRAR UMA CARTA",
+      draw: '<span class="draw-star" aria-hidden="true">✦</span> TIRAR UMA CARTA',
       delete: "Excluir",
       deleteConfirm: "Tem certeza que deseja excluir esta reflexão?",
       previousPractice: "Como posso praticar isso hoje? (registro anterior)",
@@ -5050,7 +5080,7 @@
       ,offline: "Você está offline. As cartas e funções já armazenadas continuam disponíveis."
     },
     en: {
-      nav: ["Home", "🃏 Card", "📖 Journal", "How to Use", "About", "✍️ Author"],
+      nav: ["HOME", "🃏 CARD", "📖 JOURNAL", "HOW TO USE", "ABOUT", "✍️ AUTHOR"],
       language: "Language",
       card: "CARD",
       original: "FROM THE ORIGINAL BOOK — PAGE",
@@ -5081,7 +5111,7 @@
       saved: "Your reflection has been saved in your journal. 🌱",
       journalEmptyTitle: "Your journal is still empty.",
       journalEmptyText: "Draw a card and begin your first reflection.",
-      draw: "🃏 DRAW A CARD",
+      draw: '<span class="draw-star" aria-hidden="true">✦</span> DRAW A CARD',
       delete: "Delete",
       deleteConfirm: "Are you sure you want to delete this reflection?",
       previousPractice: "How can I practise this today? (previous entry)",
@@ -5120,9 +5150,9 @@
       </div>
       <p class="challenge-flow">One card can awaken a question.<br>One question can change your perception.<br>A new perception can change a choice.</p>
       <h3 class="challenge-question">Will you accept the challenge?</h3>
-      <button class="main-button" onclick="drawCard()">🃏 DRAW MY CARD</button><br><br>
+      <button class="main-button" onclick="drawCard()"><span class="draw-star" aria-hidden="true">✦</span> DRAW MY CARD</button><br><br>
       <button class="secondary-button" onclick="showSection('como-usar')">Learn how to use this experience</button>`,
-    card: `<div class="intro"><h2>Your card</h2><p>Do not search for the perfect answer. Notice what this question awakens within you.</p><button class="main-button" onclick="drawCard()">🃏 DRAW A CARD</button></div>`,
+    card: `<div class="intro"><h2>Your card</h2><p>Do not search for the perfect answer. Notice what this question awakens within you.</p><button class="main-button" onclick="drawCard()"><span class="draw-star" aria-hidden="true">✦</span> DRAW A CARD</button></div>`,
     diary: `<h2>My Journal</h2><p>This is where the reflections you choose to keep are recorded.</p>`,
     how: `
       <h2>How to Use</h2><p class="how-to-intro">Read. Read again. Reflect. Write. Act.</p>
@@ -5136,7 +5166,7 @@
       <div class="responsibility-note">Taking responsibility does not mean accepting blame for everything, controlling another person or tolerating disrespect. It means recognising your part, protecting your boundaries and acting upon what genuinely depends on you.</div>
       <p style="margin-top:24px;">Do not draw another card before recording something about the message you received. It is important to become genuinely involved with each reflection. If you only read and move to the next card, there is no participation—and you may lose a valuable opportunity for transformation.</p>
       <div class="journey-quote">This journey is a path towards happiness, personal fulfilment and inner peace.</div>
-      <div style="text-align:center; margin-top:26px;"><button class="main-button" onclick="drawCard()">🃏 DRAW MY CARD</button></div>`,
+      <div style="text-align:center; margin-top:26px;"><button class="main-button" onclick="drawCard()"><span class="draw-star" aria-hidden="true">✦</span> DRAW MY CARD</button></div>`,
     about: `
       <h2>A Message from the Author</h2>
       <p>Hello, my loves. How are you? This book was born during the most difficult moments of my life. In deep pain, in falling and in silence, I searched for answers and ways to soothe my heart.</p>
@@ -5406,27 +5436,41 @@
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) return;
     shuffleAudioContext = shuffleAudioContext || new AudioContextClass();
-    if (shuffleAudioContext.state === "suspended") shuffleAudioContext.resume();
-    const now = shuffleAudioContext.currentTime;
-    for (let i = 0; i < 8; i++) {
-      const duration = 0.075;
+    if (shuffleAudioContext.state === "suspended") shuffleAudioContext.resume().catch(() => {});
+    const now = shuffleAudioContext.currentTime + 0.025;
+
+    function cardSlide(start, duration, volume, frequency) {
       const buffer = shuffleAudioContext.createBuffer(1, Math.ceil(shuffleAudioContext.sampleRate * duration), shuffleAudioContext.sampleRate);
       const data = buffer.getChannelData(0);
       for (let sample = 0; sample < data.length; sample++) {
-        const envelope = Math.pow(1 - sample / data.length, 2.4);
-        data[sample] = (Math.random() * 2 - 1) * envelope;
+        const progress = sample / data.length;
+        const attack = Math.min(1, progress * 18);
+        const release = Math.pow(1 - progress, 2.1);
+        data[sample] = (Math.random() * 2 - 1) * attack * release;
       }
       const source = shuffleAudioContext.createBufferSource();
       const filter = shuffleAudioContext.createBiquadFilter();
       const gain = shuffleAudioContext.createGain();
       filter.type = "bandpass";
-      filter.frequency.value = 1250 + (i % 3) * 320;
-      filter.Q.value = 0.65;
-      gain.gain.value = 0.045;
+      filter.frequency.value = frequency;
+      filter.Q.value = 0.8;
+      gain.gain.setValueAtTime(volume, start);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + duration);
       source.buffer = buffer;
       source.connect(filter).connect(gain).connect(shuffleAudioContext.destination);
-      source.start(now + i * 0.115);
+      source.start(start);
     }
+
+    // Two interlacing halves of a real deck: short, irregular paper slides.
+    for (let i = 0; i < 22; i++) {
+      const spacing = i < 15 ? 0.036 : 0.052;
+      const start = now + i * spacing + Math.random() * 0.013;
+      cardSlide(start, 0.045 + Math.random() * 0.035, 0.09 + Math.random() * 0.045, 1050 + Math.random() * 1350);
+    }
+
+    // The deck is squared up at the end with two deeper taps.
+    cardSlide(now + 0.88, 0.12, 0.15, 720);
+    cardSlide(now + 1.04, 0.09, 0.12, 940);
   }
 
   function revealCard(card) {
