@@ -1,0 +1,37 @@
+{
+  "id": "./",
+  "name": "Simplesmente Ser na Prática",
+  "short_name": "Simplesmente Ser",
+  "description": "172 reflexões em português e inglês para transformar consciência em ação.",
+  "lang": "pt-BR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#110e10",
+  "theme_color": "#833c58",
+  "categories": [
+    "lifestyle",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
